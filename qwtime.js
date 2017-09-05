@@ -1,7 +1,6 @@
-
 var cfg
 var cfgid
-var qs // question shuffled
+var qs // questions shuffled
 var state = "wait"; // "wait", "run", "finish"
 
 var nextmoment
@@ -52,11 +51,6 @@ while (0 !== currentIndex) {
 }
 
 return array;
-}
-
-function prepareClock()
-{
-
 }
 
 function click_next() 
@@ -153,7 +147,7 @@ $( document ).ready(function()
         async: false
     });
 
-    cfgid = "#x10";
+    cfgid = "#a10";
     if (window.location.hash)
     {
         cfgid = window.location.hash;
@@ -180,12 +174,7 @@ $( document ).ready(function()
     qs = cfg.questions;
     qs = shuffle(qs);
 
-
-    // prepareHours();
-    // prepareClock();
-    
     setInterval(updateClock, 100);
-
 
 });
 
