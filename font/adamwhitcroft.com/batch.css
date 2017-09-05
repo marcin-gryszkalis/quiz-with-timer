@@ -1,0 +1,21 @@
+@font-face
+{
+	font-family:Batch;
+	src:url('font/adamwhitcroft.com/batch-icons-webfont.eot');
+	src:url('font/adamwhitcroft.com/batch-icons-webfont.eot?#iefix') format('embedded-opentype'),
+  	url('font/adamwhitcroft.com/batch-icons-webfont.woff') format('woff'),
+  	url('font/adamwhitcroft.com/batch-icons-webfont.ttf') format('truetype'),
+  	url('font/adamwhitcroft.com/batch-icons-webfont.svg#batchregular') format('svg');
+	font-weight:normal;
+	font-style:normal;
+    /*font-size:64px;*/
+}
+
+.batch {
+font-family:"Batch"; /*or whatever you've decalred your font name as*/
+font-size: 4vh;
+/*font-size:64px;*/
+line-height:1;
+display:inline-block;
+/*color: #cccccc;*/
+}

@@ -1,0 +1,11 @@
+{ 
+	"title" : "Tabliczka Mnożenia",
+	"timelimit" : 15,
+	"rounds": 10,
+	"fontsize": "40",
+	"questions" : [
+		"0", "1", "2", "3", "4",
+		"5", "6", "7", "8", "9"
+	]   
+}
+

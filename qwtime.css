@@ -1,0 +1,171 @@
+
+
+body { 
+	font-family: "Open Sans", Tahoma, sans-serif; 
+	font-size: 5.7vh;
+  	background: #233a40; 
+  	color: #ddd;
+
+	margin: 0;
+	padding: 0;	
+
+	position:absolute; width:100%; height:100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.stdblock {
+    display: block;
+
+    /*margin: 0.5vh;*/
+    /*border: 1px solid blue;*/
+/*    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 2vh;
+    padding-left: 2vh;
+*/
+    background: rgba(0,0,0,0.2);
+
+
+    color: #b0b0b0;
+
+    text-shadow:
+    #888888 1px 1px 0,
+    #666666 2px 2px 0,
+    #444444 3px 3px 0,
+    #222222 4px 4px 0,
+    #000000 5px 5px 0;
+
+}
+
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#ftitle { 
+	position: relative;
+	width: calc(100% - 2vh);
+	height: calc(10% - 2vh);
+	margin-left: 1vh;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+
+    padding-top: 0vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+
+    color: #ccdde0;
+}
+
+#ftime { 
+	position: relative;
+	width: calc(100% - 2vh);
+	height: calc(15% - 2vh);
+	margin-left: 1vh;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+
+    padding-top: 0vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+
+	text-align: center;
+    color: #ccdde0;
+	font-size: 7.7vh;
+
+	cursor: pointer;
+}
+
+
+#fmain {
+	/*float: left;*/
+	position: relative;
+	width: calc(100% - 2vh);
+	height: calc(60% - 1vh);
+	margin-left: 1vh;
+
+	/*border: 1px solid yellow;*/
+	
+	text-align: center;
+	/*padding: 7%;*/
+
+    color: #ccdde0;
+    font-size: 20vh;
+}
+
+#fbuttons { 
+	position: relative;
+	width: calc(100% - 2vh);
+	height: calc(15% - 2vh);
+	margin-left: 1vh;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+
+    padding-top: 2vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+
+}
+
+
+#btn_next, #btn_prev
+{
+	height: calc(100% - 2vh);
+	width: calc(50% - 1vh);
+
+	/*border-style: outset;*/
+	background-color: rgba(0,0,0,0.4);
+	cursor:pointer;
+	float: left;
+	padding-left: 2vh;
+	padding-right: 2vh;
+	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.6);
+	vertical-align:middle;
+	text-align: center;
+
+	user-select: none;
+}
+
+#btn_next:active, #btn_prev:active
+{
+    color: #ffffff;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+	background-color: rgba(0,0,0,0.8);
+	box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+}
+
+#btn_prev
+{
+	margin-right: 2vh;
+}
+
+#btn_next
+{
+
+}
+
+
+#fdate_date {
+	float: left;
+	/*display: inline-block;*/
+	width: 80%;
+	text-align: left;
+	/*border: 1px solid green;*/
+	margin: 0; padding: 0;
+}
+
+#fdate_clock {
+	float: right;
+	/*display: inline-block;*/
+	width: 20%;
+	text-align: right;
+	/*border: 1px solid red;*/
+	margin: 0; padding: 0;
+}
+
+
+
