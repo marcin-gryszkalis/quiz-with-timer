@@ -80,6 +80,8 @@ h1 {
 	cursor: pointer;
 }
 
+/* hide time by default */
+#ftime_val { visibility: hidden; }
 
 #fmain {
 	/*float: left;*/

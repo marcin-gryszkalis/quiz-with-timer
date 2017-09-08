@@ -85,6 +85,7 @@ function click_next()
         $("#btn_next_label").html("Start")
         $("#fmain").html("")
         $("#fmain").css("font-size", cfg.fontsize + "vh")
+        $("#ftime_val").css("visibility", "hidden")
     }
 
     if (state == "run")
