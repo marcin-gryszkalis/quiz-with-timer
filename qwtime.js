@@ -122,6 +122,11 @@ function click_prev()
 
 }
 
+function click_reset()
+{
+    location.reload()
+}
+
 function click_time()
 {
     if ($("#ftime_val").css("visibility") == "visible")

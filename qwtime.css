@@ -114,10 +114,10 @@ h1 {
 }
 
 
-#btn_next, #btn_prev
+#btn_next, #btn_prev, #btn_reset
 {
 	height: calc(100% - 2vh);
-	width: calc(50% - 1vh);
+	width: calc(33% - 1vh);
 
 	/*border-style: outset;*/
 	background-color: rgba(0,0,0,0.4);
@@ -132,7 +132,7 @@ h1 {
 	user-select: none;
 }
 
-#btn_next:active, #btn_prev:active
+#btn_next:active, #btn_prev:active, #btn_reset:active
 {
     color: #ffffff;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
@@ -140,7 +140,7 @@ h1 {
 	box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 }
 
-#btn_prev
+#btn_prev, #btn_reset
 {
 	margin-right: 2vh;
 }
