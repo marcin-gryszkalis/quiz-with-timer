@@ -72,8 +72,8 @@ function click_next()
         else if (round > cfg.rounds)
         {
             state = "finish"
-            $("#fmain").css("font-size", fmain_fontsize)
-            $("#fmain").html("KONIEC")
+            $("#fmain_val").css("font-size", fmain_fontsize)
+            $("#fmain_val").html("KONIEC")
             $("#ftime_val").css("visibility", "visible")
             $("#btn_next_label").html("Od nowa")           
         }
@@ -83,8 +83,8 @@ function click_next()
         state = "wait"
         qs = shuffle(qs) // reshuffle
         $("#btn_next_label").html("Start")
-        $("#fmain").html("")
-        $("#fmain").css("font-size", cfg.fontsize + "vh")
+        $("#fmain_val").html("")
+        $("#fmain_val").css("font-size", cfg.fontsize + "vh")
         $("#ftime_val").css("visibility", "hidden")
     }
 
@@ -93,11 +93,18 @@ function click_next()
         var q = qs[round - 1]
         if (q.match(/\.(png|jpe?g)/))
         {
-            $("#fmain").html("<img src='"+cfgid.substr(1)+"/"+q+"'>")
+            $("#fmain_val").html("<img src='"+cfgid.substr(1)+"/"+q+"'>")
         }   
+        else if (q.match(/`/)) // AsciiMath default delimiter
+        {
+            $("#fmain_val").css("visibility", "hidden")
+            $("#fmain_val").html(q)
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"fmain_val"])
+            MathJax.Hub.Queue(function () { $("#fmain_val").css("visibility", "visible") })
+        }
         else
         {
-            $("#fmain").html(q)
+            $("#fmain_val").html(q)
         }
     }
 }
@@ -114,7 +121,7 @@ function click_prev()
         {
             round -= 2
             $("#btn_next_label").html("Dalej")
-            $("#fmain").css("font-size", cfg.fontsize + "vh")
+            $("#fmain_val").css("font-size", cfg.fontsize + "vh")
             state = "run"
             click_next();
         }
@@ -173,10 +180,10 @@ $( document ).ready(function()
     });
 
     // $("#ftitle").html(cfg.title + " " + cfg.rounds + "/" + cfg.questions.length + ", czas: " + cfg.timelimit + "s");
-    $("#ftitle").html(cfg.title + ", czas: " + cfg.timelimit + "s");
+    $("#ftitle").html(cfg.title + ", czas: " + cfg.timelimit);
 
-    fmain_fontsize = $("#fmain").css("font-size")
-    $("#fmain").css("font-size", cfg.fontsize + "vh")
+    fmain_fontsize = $("#fmain_val").css("font-size")
+    $("#fmain_val").css("font-size", cfg.fontsize + "vh")
     qs = cfg.questions;
     qs = shuffle(qs);
 

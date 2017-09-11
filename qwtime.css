@@ -90,12 +90,16 @@ h1 {
 	height: calc(60% - 1vh);
 	margin-left: 1vh;
 
+    padding: 1vh;
 	/*border: 1px solid yellow;*/
 	
 	text-align: center;
 	/*padding: 7%;*/
 
     color: #ccdde0;
+}
+
+#fmain_val {
     font-size: 20vh;
 }
 

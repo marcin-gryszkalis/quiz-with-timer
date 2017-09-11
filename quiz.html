@@ -12,21 +12,47 @@
     <link rel="stylesheet" href="font/adamwhitcroft.com/batch.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+    <!--
+    output/SVG
+    output/CommonHTML
+    output/HTML-CSS
+    -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        jax: ["input/AsciiMath","output/SVG"],
+        extensions: ["asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "a11y/accessibility-menu.js"],
+        AsciiMath: {
+           fixphi: true,
+           useMathMLspacing: true,
+           displaystyle: false,
+           decimalsign: ","
+        },
+        showProcessingMessages: false,
+        messageStyle: "none",
+        positionToHash: false,
+        showMathMenu: false,
+        showMathMenuMSIE: false
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+
     <script src="moment-with-locales.min.js"></script>
     <!-- <script src="moment-with-locales-2.10.6.min.js"></script> -->
     <script src="qwtime.js"></script>
-
 </head>
 
 <body>
-
     <div class="stdblock" id="ftitle"></div>
 
     <div class="stdblock" id="ftime" onclick="click_time()">
         <span id="ftime_val"></span>
     </div>
 
-    <div class="stdblock" id="fmain"></div>
+    <div class="stdblock" id="fmain">
+        <span id="fmain_val"></span>
+    </div>
 
     <div class="stdblock" id="fbuttons">
         <div id="btn_reset" onclick="click_reset()"><span class="batch">&#xf14e;</span> &nbsp; <span id="btn_reset_label">Od nowa</span></div>
@@ -36,9 +62,4 @@
 
 </body>
 </html>
-
-
-
-
-
 
