@@ -136,7 +136,27 @@ h1 {
 	user-select: none;
 }
 
-#btn_next:active, #btn_prev:active, #btn_reset:active
+#btn_next50, #btn_prev50, #btn_reset50
+{
+	height: calc(100% - 2vh);
+	width: calc(50% - 1vh);
+
+	/*border-style: outset;*/
+	background-color: rgba(0,0,0,0.4);
+	cursor:pointer;
+	float: left;
+	padding-left: 2vh;
+	padding-right: 2vh;
+	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.6);
+	vertical-align:middle;
+	text-align: center;
+
+	user-select: none;
+}
+
+
+#btn_next:active, #btn_prev:active, #btn_reset:active,
+#btn_next50:active, #btn_prev50:active, #btn_reset50:active
 {
     color: #ffffff;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
@@ -144,7 +164,8 @@ h1 {
 	box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 }
 
-#btn_prev, #btn_reset
+#btn_prev, #btn_reset,
+#btn_prev50, #btn_reset50
 {
 	margin-right: 2vh;
 }
@@ -173,5 +194,7 @@ h1 {
 	margin: 0; padding: 0;
 }
 
-
+img.bombbunny {
+	height: 100%;
+}
 

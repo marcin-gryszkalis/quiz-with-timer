@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>Time Bomb</title>
+    <link rel="shortcut icon" href="classroom-clock-favicon.png" />
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="qwtime.css" />
+    <link rel="stylesheet" href="font/adamwhitcroft.com/batch.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="spin.js"></script>
+
+    <script src="moment-with-locales.min.js"></script>
+    <!-- <script src="moment-with-locales-2.10.6.min.js"></script> -->
+    <script src="bomb.js"></script>
+</head>
+
+<body>
+    <div class="stdblock" id="ftitle"></div>
+
+    <div class="stdblock" id="ftime" onclick="click_time()">
+        <span id="ftime_val"></span>
+    </div>
+
+    <div class="stdblock" id="fmain">
+        <span id="fmain_val"></span>
+    </div>
+
+    <div class="stdblock" id="fbuttons">
+        <div id="btn_reset50" onclick="click_reset()"><span class="batch">&#xf14e;</span> &nbsp; <span id="btn_reset_label">Od nowa</span></div>
+        <div id="btn_next50" onclick="click_next()"><span class="batch">&#xf14b;</span> &nbsp; <span id="btn_next_label">Start</span></div>
+    </div>
+
+</body>
+</html>
+
