@@ -62,7 +62,7 @@ function updateClock()
             audio.play();
 
             spinner.stop();
-            var bunnyno = deadline % 6;
+            var bunnyno = deadline % 6; // bunny 0-5 . gif
             $("#fmain_val").html("<img class='bombbunny' src='bunny"+bunnyno+".gif'>");
 
             $("#btn_next_label").html("Start")
@@ -91,19 +91,23 @@ function click_next()
         cfg = cfg.substr(1);
         var cfgr = cfg.split(":");
     
-        var xl = cfgr[0];
-        var xr = cfgr[1];
+        var xl = cfgr[0] * 1.0;
+        var xr = cfgr[1] * 1.0;
     
         var diff10 = Math.floor((xr - xl) * 0.1); // 10%
     
         var b = xr - xl + 1;
         var a = xl;
    
+        console.log("---------------------------------------------");
         console.log("xl="+xl+" xr="+xr+" a="+a+" b="+b); 
         do {
-            deadline = Math.floor(Math.random() * b + a);
+            var r = Math.random();
+            var deadline_fl = ((r * b) + a);
+            deadline = Math.floor(deadline_fl);
+            console.log("r("+r+") * b("+b+") + a("+a+") = "+deadline_fl+" (+"+deadline+" floored)");
             var dist = Math.abs(prevx - deadline);
-            console.log(dist+" < "+diff10);
+            console.log("dist(prev="+prevx+" - new="+deadline+")="+dist+" < "+diff10);
         } while (dist < diff10);
         prevx = deadline;
 
