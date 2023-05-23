@@ -118,10 +118,10 @@ h1 {
 }
 
 
-#btn_next, #btn_prev, #btn_reset
+#btn_next, #btn_prev, #btn_reset, #btn_check
 {
 	height: calc(100% - 2vh);
-	width: calc(33% - 1vh);
+	width: calc(24.5% - 1vh);
 
 	/*border-style: outset;*/
 	background-color: rgba(0,0,0,0.4);
@@ -155,8 +155,8 @@ h1 {
 }
 
 
-#btn_next:active, #btn_prev:active, #btn_reset:active,
-#btn_next50:active, #btn_prev50:active, #btn_reset50:active
+#btn_next:active, #btn_prev:active, #btn_reset:active, #btn_check:active,
+#btn_next50:active, #btn_prev50:active, #btn_reset50:active, #btn_check50:active
 {
     color: #ffffff;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
@@ -164,7 +164,7 @@ h1 {
 	box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 }
 
-#btn_prev, #btn_reset,
+#btn_prev, #btn_reset, #btn_check,
 #btn_prev50, #btn_reset50
 {
 	margin-right: 2vh;

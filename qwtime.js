@@ -1,6 +1,7 @@
 var cfg
 var cfgid
 var qs // questions shuffled
+var as // answers (possibly undefined)
 var state = "wait"; // "wait", "run", "finish"
 
 var nextmoment
@@ -10,6 +11,7 @@ var lasttime
 var lastdiff
 var round
 var fmain_fontsize
+var checked
 
 function updateClock() 
 {
@@ -31,11 +33,10 @@ function updateClock()
 }
 
 // https://github.com/Daplie/knuth-shuffle/blob/master/index.js
-function shuffle(array) {
-var currentIndex = array.length
-  , temporaryValue
-  , randomIndex
-  ;
+function shuffle(array, arraz) {
+var currentIndex = array.length;
+var temporaryValue;
+var randomIndex;
 
 // While there remain elements to shuffle...
 while (0 !== currentIndex) {
@@ -48,13 +49,23 @@ while (0 !== currentIndex) {
   temporaryValue = array[currentIndex];
   array[currentIndex] = array[randomIndex];
   array[randomIndex] = temporaryValue;
+
+  if (arraz)
+    {
+   temporaryValue = arraz[currentIndex];
+  arraz[currentIndex] = arraz[randomIndex];
+  arraz[randomIndex] = temporaryValue;
+
+       
+    }
 }
 
-return array;
+// return array;
 }
 
 function click_next() 
 {
+    checked = false
     if (state == "wait")
     {
         state = "run"
@@ -81,7 +92,7 @@ function click_next()
     else if (state == "finish") // start again
     {
         state = "wait"
-        qs = shuffle(qs) // reshuffle
+        shuffle(qs, as) // reshuffle
         $("#btn_next_label").html("Start")
         $("#fmain_val").html("")
         $("#fmain_val").css("font-size", cfg.fontsize + "vh")
@@ -95,7 +106,7 @@ function click_next()
         {
             $("#fmain_val").html("<img src='"+cfgid.substr(1)+"/"+q+"'>")
         }   
-        else if (q.match(/`/)) // AsciiMath default delimiter
+        else if (q.match(/`/)) // `AsciiMath default delimiter
         {
             $("#fmain_val").css("visibility", "hidden")
             $("#fmain_val").html(q)
@@ -111,6 +122,7 @@ function click_next()
 
 function click_prev()
 {
+    checked = false
     if (state == "wait")
     {
         // nothing
@@ -133,6 +145,40 @@ function click_reset()
 {
     location.reload()
 }
+
+function click_check()
+{
+    if (state == "wait")
+    {
+        // nothing
+    }
+    else if (checked)
+    {
+        // already checked
+    }
+    else if (state == "run" || state == "finish")
+    {
+        checked = true
+        var a = as[round - 1]
+        if (a.match(/`/)) // `AsciiMath default delimiter
+        {
+            $("#fmain_val").css("visibility", "hidden")
+
+            $("#fmain_val").append(" = ")
+            $("#fmain_val").append(a)
+
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"fmain_val"])
+            MathJax.Hub.Queue(function () { $("#fmain_val").css("visibility", "visible") })
+        }
+        else
+        {
+            $("#fmain_val").append(" = ")
+            $("#fmain_val").append(a)
+        }
+    }
+
+}
+
 
 function click_time()
 {
@@ -185,7 +231,26 @@ $( document ).ready(function()
     fmain_fontsize = $("#fmain_val").css("font-size")
     $("#fmain_val").css("font-size", cfg.fontsize + "vh")
     qs = cfg.questions;
-    qs = shuffle(qs);
+    as = cfg.answers;
+    shuffle(qs, as);
+
+    if (as)
+    {
+        document.getElementById("btn_check").style.visibility = "visible";
+        document.getElementById("btn_check").style.display = "block";
+        document.getElementById("btn_next").style.width = "calc(24.5% - 1vh)";
+        document.getElementById("btn_prev").style.width = "calc(24.5% - 1vh)";
+        document.getElementById("btn_reset").style.width = "calc(24.5% - 1vh)";
+        document.getElementById("btn_check").style.width = "calc(24.5% - 1vh)";
+    }
+    else
+    {
+        document.getElementById("btn_check").style.visibility = "hidden";
+        document.getElementById("btn_check").style.display = "none";
+        document.getElementById("btn_next").style.width = "calc(33% - 1vh)";
+        document.getElementById("btn_prev").style.width = "calc(33% - 1vh)";
+        document.getElementById("btn_reset").style.width = "calc(33% - 1vh)";
+    }
 
     setInterval(updateClock, 100);
 

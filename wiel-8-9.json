@@ -1,0 +1,11 @@
+{ 
+	"title" : "Wielokrotności liczb 8 i 9",
+	"timelimit" : "bez limitu",
+	"rounds": 10,
+	"fontsize": "20",
+	"questions" : [
+		"16","24","32","40","48","56","64","72",
+		"18","27","36","45","54","63","81"
+	]   
+}
+
