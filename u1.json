@@ -1,10 +1,13 @@
 { 
-	"title" : "Tabliczka Mnożenia",
+	"title" : "Test wzorów matematycznych",
 	"timelimit" : 15,
-	"rounds": 2,
+	"rounds": 3,
 	"fontsize": "10",
 	"questions" : [
-		"`1/2`", "`2/14`", "`127/43^2`", "`sum_(i=1)^n i^3=((n(n+1))/2)^2`" 
+		"`1/2`", "`127/43^2`", "`sum_(i=1)^n i^3=((n(n+1))/2)^2`", 
+        "`d/dxf(x) = lim_(h->0)(f(x+h)-f(x))/h`", "`[[a,b],[c,d]]((n),(k))`", 
+        "`x/x = {(1,if x!=0),(text{undefined},if x=0):}`", "`bb{AB3}.bbb(AB]. cc(AB).fr{AB}.tt[AB].sf(AB)`", 
+        "`hat(ab) bar(xy) ulA vec v dotx ddot y`", "`(a,b]={x in RR | a < x <= b}`"
 	]   
 }
 
