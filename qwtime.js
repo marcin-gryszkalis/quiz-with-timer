@@ -232,6 +232,12 @@ $( document ).ready(function()
     $("#fmain_val").css("font-size", cfg.fontsize + "vh")
     qs = cfg.questions;
     as = cfg.answers;
+
+    if (as && qs.length != as.length)
+    {
+        alert("ERROR in file " + cfgjson + ": number of questions is different from number of answers");
+    }
+
     shuffle(qs, as);
 
     if (as)
