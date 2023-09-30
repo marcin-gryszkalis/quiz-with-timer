@@ -71,6 +71,10 @@ function click_next()
         state = "run"
         $("#btn_next_label").html("Dalej")
         round = 1
+        if (cfg.rounds == 0)
+        {
+            cfg.rounds = qs.length
+        }
         starttime = moment()
     }
     else if (state == "run")
