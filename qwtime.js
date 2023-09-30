@@ -71,10 +71,6 @@ function click_next()
         state = "run"
         $("#btn_next_label").html("Dalej")
         round = 1
-        if (cfg.rounds == 0)
-        {
-            cfg.rounds = qs.length
-        }
         starttime = moment()
     }
     else if (state == "run")
@@ -236,6 +232,10 @@ $( document ).ready(function()
     $("#fmain_val").css("font-size", cfg.fontsize + "vh")
     qs = cfg.questions
     as = cfg.answers
+    if (cfg.rounds == 0)
+    {
+        cfg.rounds = qs.length
+    }
 
     if (as && qs.length != as.length)
     {
