@@ -1,0 +1,18 @@
+{
+    "title" : "Zamiana ułamków dziesiętnych na zwykłe z odpowiedziami (duże napisy)",
+    "timelimit" : "bez limitu",
+    "rounds": 0,
+    "fontsize": "15",
+    "questions" : [
+        "0,5 (pięć dziesiątych)","0,25 (dwadzieścia pięć setnych)","0,75 (siedemdziesiąt pięć setnych)",
+        "0,2 (dwie dziesiąte)","0,4 (cztery dziesiąte)","0,6 (sześć dziesiątych)",
+        "0,8 (osiem dziesiątych)","0,125 (sto dwadzieścia pięć tysięcznych","0,375 (trzysta siedemdziesiąt pięć tysięcznych)",
+        "0,625 (sześćset dwadzieścia pięć tysięcznych)","0,875 (osiemset siedemdziesiąt pięć tysięcznych)"
+    ],
+    "answers" : [
+        "`1/2`","`1/4`","`3/4`",
+        "`1/5`","`2/5`","`3/5`",
+        "`4/5`","`1/8`","`3/8`",
+        "`5/8`","`7/8`"
+    ]
+}
